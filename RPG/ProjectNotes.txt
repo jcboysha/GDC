@@ -1,4 +1,3 @@
-IRC Chan: EFNET #GDC
 
 Classes: 
 Map 
