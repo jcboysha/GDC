@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Room()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Room\r\n
+comment1.params=
+comment1.target=void\ openNorth()
+comment1.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+comment2.params=
+comment2.target=void\ openSouth()
+comment3.params=
+comment3.target=void\ openEast()
+comment4.params=
+comment4.target=void\ openWest()
+comment5.params=
+comment5.target=void\ enterRoom()
+comment6.params=
+comment6.target=void\ leaveRoom()
+comment7.params=
+comment7.target=int\ getContents()
+comment8.params=
+comment8.target=void\ debugRoom()
+numComments=9

@@ -1,0 +1,5 @@
+id,object, healthmod, powermod, armormod, manamod
+1,Sword, 0, 2, 0, 0
+2,Health Potion, 1, 0, 0, 0
+3,Mana Potion, 0, 0, 0, 1
+4,Armor, 0, 0, 4, 0
