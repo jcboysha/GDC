@@ -30,49 +30,103 @@ public class Player
         }
         this.name = "player";
     }
-
     /**
-     * An example of a method - replace this comment with your own
+     * Modifies the power of the player by amount of variable mod. 
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param pow The modifying integer. Can be positive or negative
+     * 
      */
     public void setPower(int pow)
     {
         this.power += pow;
     }
+    /**
+     * Modifies the health of the player by amount of variable mod. 
+     * 
+     * @param mod The modifying integer. Can be positive or negative
+     * 
+     */
     public void setHealth(int mod)
     {
         this.health += mod;
     }
+    /**
+     * Modifies the mana of the player by amount of variable mod. 
+     * 
+     * @param mod The modifying integer. Can be positive or negative
+     * 
+     */
     public void setMana(int mod)
     {
         this.mana += mod;
     }
+    /**
+     * Modifies the armor of the player by amount of variable mod. 
+     * 
+     * @param mod The modifying integer. Can be positive or negative
+     * 
+     */
     public void setArmor(int mod)
     {
         this.armor += mod;
     }
+    /**
+     * Sets the name of the player to string nom
+      * 
+     * @param nom Name of the player. String.
+     * 
+     */
     public void setName(String nom)
     {
         this.name = nom;
     }
+     /**
+     * Modifies the experience of the player by int mod. 
+     * 
+     * @param mod The modifying integer. Should, almost, always be positive
+     * 
+     */
     public void setExperience(int mod)
     {
         this.experience += mod;
     }
+     /**
+     * Modifies the toHitMod of the player by int mod. 
+     * 
+     * @param mod The modifying integer. Can be positive or negative.
+     * 
+     */
     public void setToHitMod(int mod)
     {
         this.toHitMod += mod;
     }
+     /**
+     * Adds an item to the inventory of id at position reference. 
+     * 
+     * @param id The ID int of the item in items.csv should always correspond to an item in the items.csv file
+     * @param reference The point in the array where the item should be stored. Should always be between 0 and 4.
+     * 
+     */
     public void addToInventory(int id, int reference)
     {
         inventory[reference] = id;
     }
+     /**
+     * Adds an spell to the spellbook of id at position reference. 
+     * 
+     * @param id The ID int of the spell in spells.csv should always correspond to a spell in the spells.csv file
+     * @param reference The point in the array where the item should be stored. Should always be between 0 and 4.
+     * 
+     */
     public void addToSpellbook(int id, int reference)
     {
         spellBook[reference] = id;
     }
+     /**
+     * Prints out all the variables and values of the instance of player. 
+     * 
+     * 
+     */
     public void debugPlayer()
     {
         System.out.println("name: " + name);
