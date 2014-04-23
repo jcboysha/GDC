@@ -2,8 +2,8 @@
 /**
  * A class to build the player for each game. 
  * 
- * @author J.C. Boysha
- * @version 4/23/2014
+ * @author JCBoysha & e-waste
+ * @version 0.0.1a
  */
 public class Player
 {
