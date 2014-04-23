@@ -1,0 +1,45 @@
+IRC Chan: EFNET #GDC
+
+Classes: 
+Map 
+	Generates map of rooms
+
+Room 
+	Class for generic Room
+	
+Player
+	Class for generic player
+	
+Monster
+	Class for generic monster
+GDC:
+	Main Class. 
+	
+Engine: 
+	All the Nitty Gritty things
+	
+Data Files: 
+
+Items: 
+	CSV with all of the information about items. 
+	Formatted as follows: 
+		Item ID, Name, healthmod, powermod, armormod, manamod
+	
+Spells: 
+	CSV with all the information about spells
+	Formatted as follows: 
+		Spell ID, Name, Description, Active (Boolean), Passive (Boolean), attackPow, healthmod, armormod, mana cost, length
+		
+Monsters
+	CSV with all the different monster types
+	Formatted as follows: 
+		Monster ID, Name, Description, power, health, armor, exp value
+	
+	
+Player Characteristics: 
+	Max Health: 10 * level + 1 * xp - 1000 where XP > 1000
+	Max Power: 5 * level + 5 * xp - 1000 where XP > 1000
+	Max toHitMod: 3 * level
+	Max Mana: 5 * level + 10 * xp - 1000 where XP > 1000
+	Max Level: 10
+		EXP/level: 100
