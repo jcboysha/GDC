@@ -27,6 +27,9 @@ GDC:
 	
 Engine: 
 	All the Nitty Gritty things that make the game work
+
+Display
+	Handles generation of the Swing GUI terminal for GDC
 	
 Data Files: 
 
