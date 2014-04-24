@@ -8,10 +8,13 @@
 public class Player
 {
     // instance variables - replace the example below with your own
-    private int power, health, mana, armor, level, experience, toHitMod;
+    private int power, health, mana, armor, level, experience, toHitMod, maxHealth, maxPower,
+                maxToHitMod, maxMana;
+    private final int MAX_LEVEL = 10;
     private int[] inventory = new int[5];
     private int[] spellBook = new int[5];
     private String name;
+    
 
     /**
      * Constructor for objects of class Player
@@ -121,6 +124,45 @@ public class Player
     public void addToSpellbook(int id, int reference)
     {
         spellBook[reference] = id;
+    }
+    /**
+     * Determines and sets the max characteristics of character
+     * 
+     * @param level The level of the player. Should always be a positive integer. 
+     * @param xp The total experience points of the player. Should always be a positive integer.
+     * 
+     */
+    public void maxCharacteristics(int level, int xp)
+    {
+        if(xp > 1000)
+        {
+            this.maxHealth = (10*level)+(1*(xp-1000));
+            this.maxPower = (5*level)+(1*(xp-1000));
+            this.maxMana = (5*level)+(1*(xp-1000));
+        }
+        else
+        {
+            this.maxHealth = 10*level;
+            this.maxPower = 5*level;
+            this.maxMana = 5*level;
+        }
+        this.maxToHitMod = 3*level;
+    }
+    /**
+     * Calculates the level of the user and sets the variable accordingly. 
+     * 
+     * @param xp The total experience points of the player. Should always be a positive integer.
+     */
+    public void calcLevel(int xp)
+    {
+        if(xp>100)
+        {
+            this.level = xp/100;
+        }
+        else
+        {
+            this.level = 1;
+        }
     }
      /**
      * Prints out all the variables and values of the instance of player. 

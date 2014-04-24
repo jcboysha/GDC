@@ -1,13 +1,16 @@
 
 /**
- * Write a description of class GDC here.
+ * The main class. Used to run GDC by calling EVERYTHING ELSE
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author jcboysha and e-waste
+ * @version 0.0.1a
  */
 
 public class GDC
 {
+    /**
+     * Main - it does things!
+     */
    public static void main(String args[])
    {
        
