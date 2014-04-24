@@ -11,8 +11,6 @@ public class Player
     private int power, health, mana, armor, level, experience, toHitMod, maxHealth, maxPower,
                 maxToHitMod, maxMana;
     private final int MAX_LEVEL = 10;
-    private int[] inventory = new int[5];
-    private int[] spellBook = new int[5];
     private String name;
     
 
@@ -28,9 +26,6 @@ public class Player
         this.level = 1;
         this.experience = 0;
         this.toHitMod = 0;
-        for (int i = 0; i<inventory.length;i++){
-            inventory[i] = 0;
-        }
         this.name = "player";
     }
     /**
@@ -103,28 +98,6 @@ public class Player
     {
         this.toHitMod += mod;
     }
-     /**
-     * Adds an item to the inventory of id at position reference. 
-     * 
-     * @param id The ID int of the item in items.csv should always correspond to an item in the items.csv file
-     * @param reference The point in the array where the item should be stored. Should always be between 0 and 4.
-     * 
-     */
-    public void addToInventory(int id, int reference)
-    {
-        inventory[reference] = id;
-    }
-     /**
-     * Adds an spell to the spellbook of id at position reference. 
-     * 
-     * @param id The ID int of the spell in spells.csv should always correspond to a spell in the spells.csv file
-     * @param reference The point in the array where the item should be stored. Should always be between 0 and 4.
-     * 
-     */
-    public void addToSpellbook(int id, int reference)
-    {
-        spellBook[reference] = id;
-    }
     /**
      * Determines and sets the max characteristics of character
      * 
@@ -179,15 +152,5 @@ public class Player
         System.out.println("level: " + level);
         System.out.println("experience: " + experience);
         System.out.println("toHitMod: " + toHitMod);
-        System.out.println("inventory: ");
-        for (int i = 0; i < inventory.length; i++)
-        {
-            System.out.println("item " + i + ": " + inventory[i]);
-        }
-        System.out.println("spellBook: ");
-         for (int i = 0; i < inventory.length; i++)
-        {
-            System.out.println("spell " + i + ": " + inventory[i]);
-        }
     }
 }

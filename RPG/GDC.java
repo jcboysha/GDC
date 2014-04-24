@@ -16,7 +16,7 @@ public class GDC
        
        Room room = new Room();
        Player player = new Player();
-       /*System.out.println("Room Debug");
+       System.out.println("Room Debug");
        room.openNorth();
        room.enterRoom();
        room.debugRoom();
@@ -33,7 +33,7 @@ public class GDC
        player.setHealth(-3);
        player.setPower(1);
        player.debugPlayer();
-       */
+      
        System.out.println("\nRoom Content Test:");
        for(int i = 0; i <= 5; i++){
            room.enterRoom();
@@ -51,6 +51,12 @@ public class GDC
            else{
                System.out.println("AN EXIT!");
            }
-        }
+       }
+       room.enterRoom();
+       room.printRoom();
+       System.out.println("Room Changed");
+       room.openSouth();
+       room.leaveRoom();
+       room.printRoom();
    }
 }

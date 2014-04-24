@@ -9,6 +9,16 @@ Room
 Player
 	Class for generic player
 	
+Inventory
+	Class for inventory
+		on call it generates an array of size 5. 
+		Has methods to work with inventory. 
+		
+SpellBook
+	Class for spellbook
+		on call it generates an array of size 5
+		Has methods to work with the spellbook.
+	
 Monster
 	Class for generic monster
 	
@@ -16,7 +26,7 @@ GDC:
 	Main Class. 
 	
 Engine: 
-	All the Nitty Gritty things
+	All the Nitty Gritty things that make the game work
 	
 Data Files: 
 

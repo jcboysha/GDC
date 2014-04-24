@@ -11,16 +11,33 @@ public class Room
     // instance variables
     private boolean isOccupied = false, north=false, south=false, east=false, west=false, isExit=false;
     private int contents; 
+    private char[][] room = new char[5][5];
     private Random rand = new Random();
     /**
      * Constructor for objects of class Room
      */
     public Room()
     {
-        //DOES NOTHING!
-        //INTENTIONALLY!
+        //Generates the map!
+        this.genRoom();
     }
-
+    /**
+     * Generates the map of the room to be outputted. By default it's a closed 5x5 Square with an asterix border. 
+     */
+    public void genRoom()
+    {
+        for (int i = 0; i<5; i++){
+            this.room[i][0] = '*';
+            this.room[0][i] = '*';
+            this.room[i][4] = '*';
+            this.room[4][i] = '*';
+        }
+        for (int i = 1; i<4; i++){
+            for (int j=1; j<4; j++){
+                this.room[i][j] = ' ';
+            }
+        }
+    }
     /**
      * Sets the variable that says the north door is open. 
      * 
@@ -72,6 +89,7 @@ public class Room
     public void leaveRoom()
     {
         this.isOccupied=false;
+        contents = 1000;
     }
     /**
      * getContents - returns the integer for the contents of the room
@@ -91,7 +109,43 @@ public class Room
      */
     public void printRoom()
     {
-        //TODO - write code to print room on screen. 
+        if (this.north == true){
+            this.room[0][2] = ' ';
+        }
+        if (this.south == true){
+            this.room[4][2] = ' ';
+        }
+        if (this.east == true){
+            this.room[2][0] = ' ';
+        }
+        if (this.west == true){
+            this.room[2][4] = ' ';
+        }
+        if (this.isOccupied){
+            this.room[2][1] = '@';
+        }
+        else{
+            this.room[2][1] = ' ';
+        }
+        if (this.contents<700){
+            this.room[2][3] = '!';
+        }
+        else if (this.contents>700 && this.contents<=975){
+            this.room[2][3] = 'N';
+        }
+        else if (this.contents == 1000){
+            this.room[2][3] = ' ';
+        }
+        else{
+            this.room[2][3] = '^';
+        }
+        for (int i = 0; i<5; i++){
+            for (int j = 0; j<5; j++){
+                System.out.print(this.room[i][j]);
+                System.out.print(' ');
+            }
+            System.out.println("");
+        }
     }
     /**
      * Sets the variable isExit to true
