@@ -9,7 +9,7 @@ import java.util.Random;
 public class Room
 {
     // instance variables
-    private boolean isOccupied = false, north=false, south=false, east=false, west=false;
+    private boolean isOccupied = false, north=false, south=false, east=false, west=false, isExit=false;
     private int contents; 
     private Random rand = new Random();
     /**
@@ -92,6 +92,14 @@ public class Room
     public void printRoom()
     {
         //TODO - write code to print room on screen. 
+    }
+    /**
+     * Sets the variable isExit to true
+     * 
+     */
+    public void setExit()
+    {
+        this.isExit = true;
     }
     /**
      * Used for debugging. Outputs variables and values. 
