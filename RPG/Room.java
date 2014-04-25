@@ -2,7 +2,7 @@
 /**
  * A class to allow for the creation of Rooms for Generic Dungeon Crawler
  * 
- * @author JCBoysha and e-waste
+ * @author jcboysha and e-waste and cpboone
  * @version 0.0.1a
  */
 import java.util.Random;
@@ -80,6 +80,9 @@ public class Room
     {
         this.isOccupied=true;
         contents = rand.nextInt(1000);
+        if (contents == 999){
+            this.isExit = true;
+        }
     }
     /**
      * Performs all the necessary functions for when a room is left.
@@ -104,10 +107,9 @@ public class Room
         return this.contents;
     }
     /**
-     * Prints the room on the screen
-     * 
+     * Sets up the room to be printed. Makes all of the symbols put in the right place. Basically it makes everything look all pretty like. 
      */
-    public void printRoom()
+    public void setupRoom()
     {
         if (this.north == true){
             this.room[0][2] = ' ';
@@ -121,24 +123,35 @@ public class Room
         if (this.west == true){
             this.room[2][4] = ' ';
         }
-        if (this.isOccupied){
+        if (this.isOccupied){ //Player
             this.room[2][1] = '@';
         }
-        else{
+        else{ // No Player
             this.room[2][1] = ' ';
         }
-        if (this.contents<700){
+        if (this.contents<700){//Monster
             this.room[2][3] = '!';
         }
-        else if (this.contents>700 && this.contents<=975){
+        else if (this.contents>700 && this.contents<=975){//Nothing
             this.room[2][3] = 'N';
         }
-        else if (this.contents == 1000){
+        else if (this.contents == 1000){ //Empty - This will never be randomly selected. Variable is manually set to this value on room exit. 
             this.room[2][3] = ' ';
         }
         else{
-            this.room[2][3] = '^';
+            this.room[2][3] = '^'; //Item
         }
+        if (this.isExit == true){
+            this.room[1][3] = 'E'; //Exit door. 
+        }
+    }
+    /**
+     * Prints the room on the screen - For debugging. 
+     * 
+     */
+    public void printRoom()
+    {
+        this.setupRoom();
         for (int i = 0; i<5; i++){
             for (int j = 0; j<5; j++){
                 System.out.print(this.room[i][j]);
@@ -148,12 +161,41 @@ public class Room
         }
     }
     /**
-     * Sets the variable isExit to true
-     * 
+     * Gets the variable north
      */
-    public void setExit()
+    public boolean getNorth()
     {
-        this.isExit = true;
+        return this.north;
+    }
+    /**
+     * Gets the variable south
+     */
+    public boolean getSouth()
+    {
+        return this.south;
+    }
+    /**
+     * Gets the variable east
+     */
+    public boolean getEast()
+    {
+        return this.east;
+    }
+    /**
+     * Gets the variable west
+     */
+    public boolean getWest()
+    {
+        return this.west;
+    }
+    /**
+     * Sets the variable isExit to parameter exit
+     * 
+     * @param exit boolean variable to set isExit to. 
+     */
+    public void setExit(boolean exit)
+    {
+        this.isExit = exit;
     }
     /**
      * Used for debugging. Outputs variables and values. 
