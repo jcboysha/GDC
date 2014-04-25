@@ -7,26 +7,43 @@
  */
 public class Inventory
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
+    private int[] inventory = new int[5];
+    private String[] item = new String[6];
+    private csvRead csv = new csvRead();
     /**
      * Constructor for objects of class Inventory
      */
     public Inventory()
     {
-        // initialise instance variables
-        x = 0;
+        //initialize to a non-existent item
+        for (int i = 0; i<inventory.length; i++){
+            inventory[i] = 0;
+        }
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Adds an item of parameter id to the inventory. 
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param  id  the id of the item to add. This can be found in items.csv to set manually. 
+     * @param ref the point in the inventory to add the item.
      */
-    public void sampleMethod()
+    public void addItem(int id, int ref)
     {
-        System.out.println("Test");
+        inventory[ref] = id; 
     }
-}
+    
+    /**
+     * Prints the inventory on the screen
+     */
+    public void printInventory()
+    {
+        for (int i = 0; i<inventory.length; i++){
+            if (inventory[i] != 0){
+                item = csv.readItem(inventory[i]);
+                System.out.println("Name:\t\tHealth:\tPower:\tArmor:\tMana:");
+                System.out.println(item[1]+"\t"+item[2]+"\t"+item[3]+"\t"+item[4]+"\t"+
+                                   item[5]);
+            }
+        }
+    }
+  }

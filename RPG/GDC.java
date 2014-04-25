@@ -13,7 +13,7 @@ public class GDC
      */
    public static void main(String args[])
    {
-       
+       csvRead csv = new csvRead();
        Room room = new Room();
        Player player = new Player();
        /*System.out.println("Room Debug");
@@ -34,31 +34,10 @@ public class GDC
        System.out.println(player.setCharacteristic('H', 5));
        System.out.println(player.setCharacteristic('M', -2));
        //player.debugPlayer();
-      
-       player.inventory.sampleMethod();
-       System.out.println("\nRoom Content Test:");
-       for(int i = 0; i <= 5; i++){
-           room.enterRoom();
-           int c1 = room.getContents();
-           System.out.print(c1 + ": ");
-           if (c1<700){
-               System.out.println("A MONSTER!");
-           }
-           else if (c1>700 && c1<=850){
-               System.out.println("NOTHING HAPPENS!");
-           }
-           else if(c1>850 && c1<=998){
-               System.out.println("AN ITEM!");
-           }
-           else{
-               System.out.println("AN EXIT!");
-           }
-       }
-       room.enterRoom();
-       room.printRoom();
-       System.out.println("Room Changed");
-       room.openSouth();
-       room.leaveRoom();
-       room.printRoom();
+       
+       player.inventory.addItem(2,0);
+       player.inventory.addItem(1,1);
+       player.inventory.addItem(3,2);
+       player.inventory.printInventory();
    }
 }
