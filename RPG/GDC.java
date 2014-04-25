@@ -16,7 +16,7 @@ public class GDC
        
        Room room = new Room();
        Player player = new Player();
-       System.out.println("Room Debug");
+       /*System.out.println("Room Debug");
        room.openNorth();
        room.enterRoom();
        room.debugRoom();
@@ -25,15 +25,17 @@ public class GDC
        room.leaveRoom();
        room.openSouth();
        room.debugRoom();
-       
+       */
        System.out.println("\nPlayer Debug");
        player.setName("Daelphinux");
-       player.debugPlayer();
+       //player.debugPlayer();
+       player.maxChar(player.getLevel(), player.getExperience());
        System.out.println("\nPlayer Change");
-       player.setHealth(-3);
-       player.setPower(1);
-       player.debugPlayer();
+       System.out.println(player.setCharacteristic('H', 5));
+       System.out.println(player.setCharacteristic('M', -2));
+       //player.debugPlayer();
       
+       player.inventory.sampleMethod();
        System.out.println("\nRoom Content Test:");
        for(int i = 0; i <= 5; i++){
            room.enterRoom();

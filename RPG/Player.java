@@ -12,6 +12,8 @@ public class Player
                 maxToHitMod, maxMana;
     private final int MAX_LEVEL = 10;
     private String name;
+    public Inventory inventory = new Inventory();
+    public SpellBook spellbook = new SpellBook();
     
 
     /**
@@ -28,84 +30,15 @@ public class Player
         this.toHitMod = 0;
         this.name = "player";
     }
-    /**
-     * Modifies the power of the player by amount of variable mod. 
-     * 
-     * @param pow The modifying integer. Can be positive or negative
-     * 
-     */
-    public void setPower(int pow)
-    {
-        this.power += pow;
-    }
-    /**
-     * Modifies the health of the player by amount of variable mod. 
-     * 
-     * @param mod The modifying integer. Can be positive or negative
-     * 
-     */
-    public void setHealth(int mod)
-    {
-        this.health += mod;
-    }
-    /**
-     * Modifies the mana of the player by amount of variable mod. 
-     * 
-     * @param mod The modifying integer. Can be positive or negative
-     * 
-     */
-    public void setMana(int mod)
-    {
-        this.mana += mod;
-    }
-    /**
-     * Modifies the armor of the player by amount of variable mod. 
-     * 
-     * @param mod The modifying integer. Can be positive or negative
-     * 
-     */
-    public void setArmor(int mod)
-    {
-        this.armor += mod;
-    }
-    /**
-     * Sets the name of the player to string nom
-      * 
-     * @param nom Name of the player. String.
-     * 
-     */
-    public void setName(String nom)
-    {
-        this.name = nom;
-    }
+    //Operations
      /**
-     * Modifies the experience of the player by int mod. 
-     * 
-     * @param mod The modifying integer. Should, almost, always be positive
-     * 
-     */
-    public void setExperience(int mod)
-    {
-        this.experience += mod;
-    }
-     /**
-     * Modifies the toHitMod of the player by int mod. 
-     * 
-     * @param mod The modifying integer. Can be positive or negative.
-     * 
-     */
-    public void setToHitMod(int mod)
-    {
-        this.toHitMod += mod;
-    }
-    /**
      * Determines and sets the max characteristics of character
      * 
      * @param level The level of the player. Should always be a positive integer. 
      * @param xp The total experience points of the player. Should always be a positive integer.
      * 
      */
-    public void maxCharacteristics(int level, int xp)
+    public void maxChar(int level, int xp)
     {
         if(xp > 1000)
         {
@@ -152,5 +85,148 @@ public class Player
         System.out.println("level: " + level);
         System.out.println("experience: " + experience);
         System.out.println("toHitMod: " + toHitMod);
+    }
+    //Getters
+    /**
+     * Gets the power variable
+     */
+    public int getPower()
+    {
+        return this.power;
+    }
+    /**
+     * Gets the health variable 
+     */
+    public int getHealth()
+    {
+        return this.health;
+    }
+    /**
+     * Gets the mana variable
+     */
+    public int getMana()
+    {
+        return this.mana;
+    }
+    /**
+     * Gets the armor variable
+     */
+    public int getArmor()
+    {
+        return this.armor;
+    }
+    /**
+     * Gets the level variable
+     */
+    public int getLevel()
+    {
+        return this.level;
+    }
+    /**
+     * Gets the experience variable
+     */
+    public int getExperience()
+    {
+        return this.experience;
+    }
+    /**
+     * Gets the toHitMod variable
+     */
+    public int getToHitMod()
+    {
+        return this.toHitMod;
+    }
+    //Setters
+    /**
+     * Changes characteristic chosen by value of mod. 
+     * 
+     * @param Characteristic Char value for the characteristic that needs to be changed
+     * @param mod Integert value of the modifier by which the chosen characteristic needs to be changed
+     */
+    public String setCharacteristic(char Characteristic, int mod)
+    {
+        String returnValue = "";
+    	switch (Character.toLowerCase(Characteristic)){
+            case 'h': //Health
+        		if ((this.health+mod)<=this.maxHealth){
+        			this.health += mod;
+        			returnValue = "Health is now " + this.health + ".";
+        			break;
+        		}
+        		else{
+        			this.health = this.maxHealth;
+        			returnValue = "Health is at max!";
+        			break;
+        		}
+        	
+        	case 'p': //Power
+        		if ((this.power+mod)<=this.maxPower){
+        			this.power += mod;
+        			returnValue = "Power is now " + this.power + ".";
+        			break;
+        		}
+        		else{
+        			this.power = this.maxPower;
+        			returnValue = "Power is at max!";
+        			break;
+        		}
+        		
+        	case 'm': //Mana
+        		if ((this.mana+mod) <= this.maxMana){
+        			this.mana += mod;
+        			returnValue = "Mana is now " + this.mana + ".";
+        			break;
+        		}
+        		else{
+        			this.mana = this.maxMana;
+        			returnValue = "Mana is at max!";
+        			break;
+        		}
+        	
+        	case 'a': //Armor
+    			this.armor += mod;
+    			returnValue = "Armor is now " + this.armor + ".";
+    			break;
+
+        	case 'l': //Level
+        		if ((this.level+mod) <= this.MAX_LEVEL){
+        			this.level += mod;
+        			returnValue = "Level is now " + this.level + ".";
+        			break;
+        			}
+        		else{
+        			this.level = this.MAX_LEVEL;
+        			returnValue = "Level is at max!";
+        			break;
+        		}
+        		
+        	case 'e': //Experience
+        		this.experience += mod;
+        		returnValue = "Experience is now " + this.experience + ".";
+        		break;
+        	
+        	case 't': //toHitMod
+        		if ((this.toHitMod+mod) <= this.maxToHitMod){
+        			this.toHitMod += mod;
+        			returnValue = "To Hit is now " + this.level + ".";
+        			break;
+        		}
+        		else{
+        			this.toHitMod = this.maxToHitMod;
+        			returnValue = "Hit Mod is at max!";
+        			break;
+        		}
+        }
+        return returnValue;
+    }
+    /**
+     * Sets the name of the player to string Nom
+     * 
+     * @param nom String value to change player name to. 
+     * 
+     */
+    public void setName(String nom)
+    {
+        this.name = nom;
     }
 }
