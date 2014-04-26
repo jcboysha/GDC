@@ -37,6 +37,8 @@ Items:
 	CSV with all of the information about items. 
 	Formatted as follows: 
 		Item ID, Name, healthmod, powermod, armormod, manamod
+	Disposable items are items number 1-20;
+	items 21-30 are not disposable.
 	
 Spells: 
 	CSV with all the information about spells

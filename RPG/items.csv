@@ -1,8 +1,26 @@
 id,object, healthmod, powermod, armormod, manamod
-1,Sword,0,5,0,0
+1,Health Potion,3,0,0,0
 2,Health Potion,3,0,0,0
-3,Mana Potion,0,0,0,3
-4,Armor,0,0,5,0
-5,Magic Armor,0,0,10,0
-6,Dagger,0,3,1,0
-7,Staff,0,2,1,3
+3,Health Potion,3,0,0,0
+4,Health Potion,3,0,0,0
+5,Health Potion,3,0,0,0
+6,Health Potion,3,0,0,0
+7,Health Potion,3,0,0,0
+8,Health Potion,3,0,0,0
+9,Health Potion,3,0,0,0
+10,Health Potion,3,0,0,0
+11,Mana Potion,0,0,0,3
+12,Mana Potion,0,0,0,3
+13,Mana Potion,0,0,0,3
+14,Mana Potion,0,0,0,3
+15,Mana Potion,0,0,0,3
+16,Mana Potion,0,0,0,3
+17,Mana Potion,0,0,0,3
+18,Mana Potion,0,0,0,3
+19,Mana Potion,0,0,0,3
+20,Mana Potion,0,0,0,3
+21,Sword,0,5,0,0
+22,Armor,0,0,5,0
+23,Magic Armor,0,0,10,0
+24,Dagger,0,3,1,0
+25,Staff,0,2,1,3

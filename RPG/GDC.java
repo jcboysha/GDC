@@ -31,13 +31,23 @@ public class GDC
        //player.debugPlayer();
        player.maxChar(player.getLevel(), player.getExperience());
        System.out.println("\nPlayer Change");
-       System.out.println(player.setCharacteristic('H', 5));
-       System.out.println(player.setCharacteristic('M', -2));
        //player.debugPlayer();
        
        player.inventory.addItem(2,0);
-       player.inventory.addItem(1,1);
-       player.inventory.addItem(3,2);
+       player.inventory.addItem(11,1);
+       player.inventory.addItem(11,2);
+       player.inventory.addItem(11,3);
+       player.inventory.addItem(11,4);
        player.inventory.printInventory();
+       System.out.println(player.setCharacteristic('H', -5));
+       System.out.println(player.setCharacteristic('M',-3));
+       player.useItem(0);
+       player.useItem(1);
+       player.useItem(2);
+       player.useItem(3);
+       player.useItem(4);
+       player.inventory.printInventory();
+       System.out.println(player.setCharacteristic('H', 0));
+       System.out.println(player.setCharacteristic('M',0));
    }
 }

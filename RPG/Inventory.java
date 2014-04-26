@@ -7,7 +7,7 @@
  */
 public class Inventory
 {
-    private int[] inventory = new int[5];
+    public int[] inventory = new int[5];
     private String[] item = new String[6];
     private csvRead csv = new csvRead();
     /**
@@ -20,7 +20,6 @@ public class Inventory
             inventory[i] = 0;
         }
     }
-
     /**
      * Adds an item of parameter id to the inventory. 
      * 
@@ -31,7 +30,23 @@ public class Inventory
     {
         inventory[ref] = id; 
     }
-    
+    /**
+     * Removes an item from the inventory at ref point. 
+     * @param ref the point in the inventory to remove the item. 
+     */
+    public void remItem(int ref)
+    {
+        inventory[ref] = 0;
+    }
+    /**
+     * Read the itms in the array and return the variables therefrom. 
+     * @param ref The placement of the item in the array. 
+     */
+    public String[] readItem(int ref)
+    {
+        item = csv.readItem(inventory[ref]);
+        return item;
+    }
     /**
      * Prints the inventory on the screen
      */
