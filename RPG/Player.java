@@ -97,6 +97,16 @@ public class Player
         inventory.remItem(ref);
     }
     /**
+     * Picks up the item in question
+     * 
+     * @param ref The reference point in the inventory to place the item. 
+     * @param id The id of the item to be picked up. 
+     */
+    public void pickUpItem(int id, int ref)
+    {
+        inventory.addItem(id, ref);
+    }
+    /**
      * Calculates the level of the user and sets the variable accordingly. 
      * 
      * @param xp The total experience points of the player. Should always be a positive integer.
